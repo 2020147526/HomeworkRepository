@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin: 20px;
+}
+
+label > input {
+  display: inline;
+  border: none;
+  height: 40px;
+  margin-left: 10px;
+  border-bottom: 2px solid midnightblue;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.radio-label {
+  display: inline-block;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: seashell;
+}
+
+#sex {
+  margin: 20px;
+}
+
+#sex > input {
+  margin-left: 20px;
+}
+
+#banner {
+  background-color: cornflowerblue;
+  color: antiquewhite;
+  padding: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+#submit-area {
+  background-color: wheat;
+  font-size: 20px;
+  padding: 30px;
+  padding-left: 30%;
+  margin: 0px 50px;
+  border-radius: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: midnightblue;
+}
+
+#menu {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+#btn-checked {
+  border-top: 2px solid royalblue;
+  border-bottom: 2px solid royalblue;
+  border-radius: 5px;
+}
+
+button {
+  padding: 20px 40px;
+  border: none;
+  border-bottom: 2px solid midnightblue;
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.submit {
+  background-color: crimson;
+  color: white;
+}
+
+.cancel {
+  background-color: royalblue;
+  color: white;
+}
