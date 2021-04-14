@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+label {
+    display: block;
+    margin: 20px;
+}
+
+label > input {
+    display: inline;
+    border: none;
+    height: 40px;
+    margin-left: 10px;
+    border-bottom: 2px solid midnightblue;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+}
+
+.radio-label {
+    display: inline-block;
+    margin: 0;
+}
+
+body {
+    width: 1020px;
+    height: 100vh;
+    margin: auto;
+    background-color: seashell;
+}
+
+#sex {
+    margin: 20px;
+}
+
+#sex > input {
+    margin-left: 20px;
+}
+
+#banner {
+    box-shadow: 3px 3px 3px royalblue;
+    background-color: cornflowerblue;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#banner-text {
+    color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+}
+
+.banner-animation {
+    animation-name: banner-load;
+    animation-duration: 2s;
+}
+
+@keyframes banner-load {
+    0% {
+        left: 1020px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+#submit-area {
+    background-color: wheat;
+    font-size: 20px;
+    padding: 30px;
+    padding-left: 20%;
+    margin: 0px 50px;
+    border-radius: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: midnightblue;
+}
+
+#nav {
+    text-align: center;
+    width: 600px;
+    margin: 20px auto;
+}
+
+#nav .nav-item {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#nav .item-checked {
+    border-top: 2px solid royalblue;
+    border-bottom: 2px solid royalblue;
+    border-radius: 5px;
+}
+
+button {
+    padding: 20px 40px;
+    border: none;
+    border-bottom: 2px solid midnightblue;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.submit {
+    background-color: crimson;
+    color: white;
+}
+
+.cancel {
+    background-color: royalblue;
+    color: white;
+}
+
+#content {
+    margin: 20px;
+    padding: 50px;
+    background-color: wheat;
+    border-radius: 30px;
+}
+
+#content #main #items {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 20px;
+}
+
+#content #main #items .item {
+    width: 300px;
+    height: 412px;
+    border: 2px solid midnightblue;
+}
+
+#content #main #items img {
+    width: 200px;
+    transition: width 2s, height 2s;
+}
+
+#content #main #items img:hover {
+    width: 100%;
+}
+
+#content h3 {
+    color: midnightblue;
+    border-bottom: 2px solid midnightblue;
+    padding-bottom: 5px;
+}
+
+#content #info .text {
+    margin: 20px;
+
+    column-count: 3;
+    column-gap: 30px;
+    column-width: 10px;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+}
+
+#content #info .text p {
+    column-width: 300px;
+    text-align: center;
+}
