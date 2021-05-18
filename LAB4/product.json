@@ -1,0 +1,250 @@
+[
+{
+"name" : "사과",
+"price" : 3000,
+"unit" : "1개",
+"etc" : "국내산, 부사, 300g",
+"offset" : 0,
+"category" : "과일"
+},
+{
+"name" : "배",
+"price" : 5000,
+"unit" : "1개",
+"etc" : "국내산, 신고배, 600g",
+"offset" : -57,
+"category" : "과일"
+},
+{
+"name" : "배추",
+"price" : 4000,
+"unit" : "1포기",
+"etc" : "국내산, 2.5kg ~ 3kg",
+"offset" : -114,
+"category" : "채소"
+},
+{
+"name" : "무",
+"price" : 1500,
+"unit" : "1개",
+"etc" : "국내산, 세척무, 1kg",
+"offset" : -171,
+"category" : "채소"
+},
+{
+"name" : "양파",
+"price" : 3500,
+"unit" : "1망",
+"etc" : "국내산, 햇양파, 1~1.5kg",
+"offset" : -228,
+"category" : "채소"
+},
+{
+"name" : "상추",
+"price" : 850,
+"unit" : "1봉",
+"etc" : "국내산, 100g",
+"offset" : -285,
+"category" : "채소"
+},
+{
+"name" : "오이",
+"price" : 500,
+"unit" : "1개",
+"etc" : "국내산, 다다기, 230g",
+"offset" : -342,
+"category" : "채소"
+},
+{
+"name" : "애호박",
+"price" : 1600,
+"unit" : "1개",
+"etc" : "국내산, 금산, 500g",
+"offset" : -397,
+"category" : "채소"
+},
+{
+"name" : "쇠고기",
+"price" : 29000,
+"unit" : "600g",
+"etc" : "국내산(한우), 불고기",
+"offset" : -454,
+"category" : "육류"
+},
+{
+"name" : "돼지고기",
+"price" : 14000,
+"unit" : "600g",
+"etc" : "국내산, 생삼겹살",
+"offset" : -511,
+"category" : "육류"
+},
+{
+"name" : "닭고기",
+"price" : 6500,
+"unit" : "1마리",
+"etc" : "국내산, 욱계, 1kg",
+"offset" : -568,
+"category" : "육류"
+},
+{
+"name" : "달걀(10개)",
+"price" : 3580,
+"unit" : "1판",
+"etc" : "국내산, 특란, 600g",
+"offset" : -625,
+"category" : "육류"
+},
+{
+"name" : "조기",
+"price" : 3300,
+"unit" : "1마리",
+"etc" : "국내산, 냉동",
+"offset" : -682,
+"category" : "어류"
+},
+{
+"name" : "명태",
+"price" : 3500,
+"unit" : "1마리",
+"etc" : "수입산(러시아), 냉동",
+"offset" : -739,
+"category" : "어류"
+},
+{
+"name" : "오징어",
+"price" : 4000,
+"unit" : "1마리",
+"etc" : "국내산, 생물",
+"offset" : -796,
+"category" : "어류"
+},
+{
+"name" : "고등어",
+"price" : 3500,
+"unit" : "1마리",
+"etc" : "국내산, 냉동",
+"offset" : -853,
+"category" : "어류"
+},
+{
+"name" : "호박",
+"price" : 3000,
+"unit" : "1개",
+"etc" : "국내산, 인큐베이터, 340g",
+"offset" : -910,
+"category" : "채소"
+},
+{
+"name" : "참외",
+"price" : 2900,
+"unit" : "1개",
+"etc" : "국내산, 성주, 300g",
+"offset" : -967,
+"category" : "과일"
+},
+{
+"name" : "식용유",
+"price" : 2600,
+"unit" : "1개",
+"etc" : "청정원 900ml",
+"offset" : -1024,
+"category" : "기타"
+},
+{
+"name" : "쌀",
+"price" : 46000,
+"unit" : "10kg",
+"etc" : "국내산, 충청도, 10kg",
+"offset" : -1081,
+"category" : "기타"
+},
+{
+"name" : "수박",
+"price" : 10000,
+"unit" : "1개",
+"etc" : "국내산, 함안, 6kg",
+"offset" : -1138,
+"category" : "과일"
+},
+{
+"name" : "두부",
+"price" : 1200,
+"unit" : "1개",
+"etc" : "국내산, 진천, 380g",
+"offset" : -1195,
+"category" : "기타"
+},
+{
+"name" : "치킨",
+"price" : 18000,
+"unit" : "1마리",
+"etc" : "bbq",
+"offset" : -1252,
+"category" : "육류"
+},
+{
+"name" : "밀가루",
+"price" : 14000,
+"unit" : "20kg",
+"etc" : "국내산, 백설, 300g",
+"offset" : -1309,
+"category" : "기타"
+},
+{
+"name" : "마늘",
+"price" : 6000,
+"unit" : "500g",
+"etc" : "국내산, 창녕, 500g",
+"offset" : -1366,
+"category" : "채소"
+},
+{
+"name" : "냉면",
+"price" : 12900,
+"unit" : "1.45kg",
+"etc" : "샘표",
+"offset" : -1423,
+"category" : "기타"
+},
+{
+"name" : "빙어",
+"price" : 3200,
+"unit" : "1마리",
+"etc" : "얼어있음",
+"offset" : -1480,
+"category" : "어류"
+},
+{
+"name" : "김",
+"price" : 250,
+"unit" : "1개",
+"etc" : "국내산, 광천, 4g",
+"offset" : -1537,
+"category" : "기타"
+},
+{
+"name" : "고추가루",
+"price" : 8000,
+"unit" : "100g",
+"etc" : "국내산, 100g",
+"offset" : -1594,
+"category" : "기타"
+},
+{
+"name" : "미꾸라지",
+"price" : 1200,
+"unit" : "1마리",
+"etc" : "미끄러움",
+"offset" : -1651,
+"category" : "어류"
+},
+{
+"name" : "동태",
+"price" : 2900,
+"unit" : "1마리",
+"etc" : "수입산(러시아)",
+"offset" : -1708,
+"category" : "어류"
+}
+]

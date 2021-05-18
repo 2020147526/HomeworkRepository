@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Internet Programming Shop</title>
+</head>
+
+<body>
+    <div id="banner">
+        <h1 id="banner-text" class="banner-animation">Welcome to INTERNET-PROGRAMMING SHOP</h1>
+    </div>
+
+    <div id="nav">
+        <a href="./index.html" class="nav-item item-checked">MAIN</a>
+        <a href="./login.html" class="nav-item">LOGIN</a>
+        <a href="./signup.html" class="nav-item">REGISTER</a>
+    </div>
+
+    <div id="content">
+        <div id="main">
+            <div id="filterContainer">
+                <form>
+                    <div>
+                        <label for="category">Choose a category:</label>
+                        <select id="category">
+                            <option value="전체" selected>전체</option>
+                            <option value="과일">과일</option>
+                            <option value="채소">채소</option>
+                            <option value="육류">육류</option>
+                            <option value="어류">어류</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="searchTerm">Enter search term:</label>
+                        <input type="text" id="searchTerm" placeholder="e.g. beans">
+                    </div>
+                    <button id="searchBtn">Filter results</button>
+                </form>
+            </div>
+            <div id="productsContainer">
+                <h3>Products</h3>
+                <div id="items">
+                </div>
+            </div>
+        </div>
+        <div id="info">
+            <h3>Introduction</h3>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, adipisci?
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, quod.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, minima!</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    fetch('product.json')
+        .then(response => response.json())
+        .then(json => {
+            initialize(json);
+        }).catch(function (err) {
+            console.log('Fetch problem: ' + err.message);
+        });
+
+
+
+    function initialize(products) {
+        const category = document.querySelector('#category');
+        const searchTerm = document.querySelector('#searchTerm');
+        const searchBtn = document.querySelector('#searchBtn');
+        const itemContainer = document.querySelector('#items');
+        const productContainer = document.querySelector('#productsContainer');
+
+        let currentGroup = products;
+        let categoryGroup = [];
+        let searchGroup = [];
+        let count = 8;
+        updateContainer();
+        categoryVal = '';
+        searchVal = '';
+        lastCategory = '';
+        lastSearch = '';
+
+        searchBtn.onclick = searchCategory;
+
+        productContainer.onscroll = () => {
+            let scrollCurrent = productContainer.scrollTop + productContainer.clientHeight;
+            let scrollMax = productContainer.scrollHeight;
+            if (scrollCurrent > scrollMax - 50) {
+                count += 6;
+                updateContainer(count);
+            }
+        }
+
+        function searchCategory(e) {
+            e.preventDefault();
+            count = 8;
+            productContainer.scrollTop = 0;
+
+            categoryVal = category.value;
+            searchVal = searchTerm.value;
+            lastCategory = categoryVal;
+            lastSearch = searchVal;
+
+            categoryGroup = [];
+            if (categoryVal === '전체') {
+                categoryGroup = products;
+            } else {
+                for (let i = 0; i < products.length; i++) {
+                    if (products[i].category === categoryVal) {
+                        categoryGroup.push(products[i]);
+                    }
+                }
+            }
+            searchProduct();
+        }
+
+        function searchProduct() {
+            searchGroup = [];
+            if (searchVal.trim() === '') {
+                searchGroup = categoryGroup;
+            } else {
+                for (let i = 0; i < categoryGroup.length; i++) {
+                    if (categoryGroup[i].name.indexOf(searchVal.trim()) !== -1) {
+                        searchGroup.push(categoryGroup[i]);
+                    }
+                }
+            }
+            currentGroup = searchGroup;
+            updateContainer(count);
+        }
+
+        function updateContainer() {
+            while (itemContainer.firstChild) {
+                itemContainer.removeChild(itemContainer.firstChild);
+            }
+
+            if (currentGroup.length === 0) {
+                addProduct({
+                    "name": "505",
+                    "price": 0,
+                    "unit": "",
+                    "etc": "검색 결과가 없습니다",
+                    "offset": -1765,
+                    "category": ""
+                });
+            } else {
+                for (let i = 0; i < currentGroup.length && i < count; i++) {
+                    addProduct(currentGroup[i]);
+                }
+            }
+        }
+
+        function addProduct(product) {
+            const item = document.createElement('div');
+            const item_table = document.createElement('table');
+            const tr1 = document.createElement('tr');
+            const tr2 = document.createElement('tr');
+            const tr3 = document.createElement('tr');
+            const item_image = document.createElement('td');
+            const item_name = document.createElement('td');
+            const item_bar = document.createElement('td');
+            const item_value = document.createElement('td');
+            const item_unit = document.createElement('td');
+            const item_etc = document.createElement('td');
+            const img = document.createElement('img');
+            const span = document.createElement('span');
+
+            item.classList.add('item');
+            item_table.classList.add('item-table');
+            item.appendChild(item_table);
+            item_table.appendChild(tr1);
+            item_table.appendChild(tr2);
+            item_table.appendChild(tr3);
+
+            // tr1
+            item_image.classList.add('item-image');
+            item_image.setAttribute('rowspan', '3');
+            img.style.backgroundPositionY = `${product.offset}px`;
+            item_image.appendChild(img);
+            tr1.appendChild(item_image);
+            item_name.classList.add('item-name');
+            item_name.innerHTML = product.name;
+            span.classList.add('item-bar');
+            item_name.appendChild(span);
+            tr1.appendChild(item_name);
+            item_value.classList.add('item-value');
+            item_value.innerHTML = `${product.price}원`;
+            tr1.appendChild(item_value);
+
+            // tr2
+            item_unit.classList.add('item-unit');
+            item_unit.setAttribute('colspan', '2');
+            item_unit.innerHTML = `단위 : ${product.unit}`;
+            tr2.appendChild(item_unit);
+
+            // tr3
+            item_etc.classList.add('item-etc');
+            item_etc.setAttribute('colspan', '2');
+            item_etc.innerHTML = product.etc;
+            tr3.appendChild(item_etc);
+
+            itemContainer.appendChild(item);
+
+            item.onclick = (e) => {
+                let target = e.currentTarget;
+                target.classList.add('show');
+                setTimeout(() => {
+                    target.classList.remove('show');
+                }, 3000);
+            }
+        }
+    }
+
+</script>
+<!-- <div class="item">
+    <table class="item-table">
+        <tr>
+            <td rowspan="3" class="item-image">
+                <img />
+            </td>
+            <td class="item-name">사과
+                <span class="item-bar"></span>
+            </td>
+            <td class="item-value">3000원</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="item-unit">단위1개</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="item-etc">국내산</td>
+        </tr>
+    </table>
+</div> -->
+
+</html>
