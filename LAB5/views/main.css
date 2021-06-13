@@ -1,0 +1,394 @@
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Hanna, fantasy;
+}
+
+label {
+    display: block;
+    margin: 20px;
+}
+
+label > input {
+    display: inline;
+    border: none;
+    height: 40px;
+    margin-left: 10px;
+    border-bottom: 2px solid midnightblue;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+}
+
+.radio-label {
+    display: inline-block;
+    margin: 0;
+}
+
+body {
+    width: 1020px;
+    height: 100vh;
+    margin: auto;
+    background-color: seashell;
+}
+
+#sex {
+    margin: 20px;
+}
+
+#sex > input {
+    margin-left: 20px;
+}
+
+#banner {
+    box-shadow: 3px 3px 3px royalblue;
+    background-color: cornflowerblue;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#banner-text {
+    color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+}
+
+.banner-animation {
+    animation-name: banner-load;
+    animation-duration: 2s;
+}
+
+@keyframes banner-load {
+    0% {
+        left: 1020px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+#submit-area {
+    background-color: wheat;
+    font-size: 20px;
+    padding: 30px;
+    padding-left: 20%;
+    margin: 0px 50px;
+    border-radius: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: midnightblue;
+}
+
+#nav {
+    text-align: center;
+    width: 600px;
+    margin: 20px auto;
+}
+
+#nav .nav-item {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#nav .item-checked {
+    border-top: 2px solid royalblue;
+    border-bottom: 2px solid royalblue;
+    border-radius: 5px;
+}
+
+button {
+    padding: 20px 40px;
+    border: none;
+    border-bottom: 2px solid midnightblue;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.submit {
+    background-color: crimson;
+    color: white;
+}
+
+.cancel {
+    background-color: royalblue;
+    color: white;
+}
+
+#content {
+    margin: 0px 50px;
+    padding: 50px 80px;
+    background-color: wheat;
+    border-radius: 50px;
+}
+
+#main {
+    width: 100%;
+    display: flex;
+}
+
+#filterContainer {
+    width: 25%;
+    margin: 0px auto auto 0px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 2px 1px rgba(6, 6, 6, 0.2);
+    text-align: center;
+}
+
+#filterContainer div {
+    margin-bottom: 25px;
+}
+
+#filterContainer div label {
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#filterContainer select {
+    width: 100%;
+    height: 2em;
+}
+
+#filterContainer input[type='text'] {
+    width: 100%;
+    height: 2em;
+}
+
+#filterContainer #searchBtn {
+    border: none;
+    border-bottom: 2px solid midnightblue;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px;
+    font-size: 1em;
+
+    color: white;
+    background-color: crimson;
+    width: 70%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#productsContainer {
+    width: 70%;
+    height: 50vh;
+    overflow-y: scroll;
+    background-color: whitesmoke;
+    border: 5px ridge #ccc;
+    padding: 20px;
+}
+
+#productsContainer::-webkit-scrollbar {
+    width: 5px;
+}
+
+#productsContainer::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+#productsContainer::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+#items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 20px;
+}
+
+#items .item {
+    width: 45%;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.item-table {
+    width: 100%;
+    height: 80px;
+    border: 2px solid midnightblue;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-indent: 0;
+}
+
+.item-table img {
+    width: 57px;
+    height: 57px;
+    display: block;
+    background-repeat: no-repeat;
+    margin: auto;
+    transition: transform 0.5s ease-out;
+}
+
+.item-table:hover img {
+    transform: scale(1.3);
+}
+
+td.item-image {
+    width: 80px;
+    height: 80px;
+    border-right: 2px solid midnightblue;
+}
+
+td.item-name {
+    text-align: left;
+    position: relative;
+    font-size: 1em;
+    color: #3c9bd1;
+    padding-left: 5px;
+}
+
+td.item-name span.item-bar {
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
+    width: 15px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+}
+
+td.item-value {
+    font-size: 0.8em;
+    text-align: right;
+    padding-right: 10px;
+    color: #454545;
+}
+
+td.item-unit {
+    font-size: 0.6em;
+    text-align: left;
+    padding-left: 5px;
+    color: #333333;
+}
+
+td.item-etc {
+    font-size: 0.6em;
+    text-align: left;
+    padding-left: 5px;
+    color: #666666;
+}
+
+td.item-category {
+    font-size: 0.6em;
+    text-align: right;
+    padding-right: 10px;
+    color: #666666;
+}
+
+#content h3 {
+    color: midnightblue;
+    border-bottom: 2px solid midnightblue;
+    padding-bottom: 5px;
+}
+
+#content #info {
+    margin-top: 50px;
+}
+
+#content #info .text {
+    margin: 20px;
+
+    column-count: 3;
+    column-gap: 30px;
+    column-width: 10px;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+}
+
+#content #info .text p {
+    column-width: 300px;
+    text-align: center;
+}
+
+#secret_data,
+#secret_search,
+#secret_category {
+    display: none;
+}
+
+/* product page */
+
+.product-info {
+    width: 40%;
+    height: 200px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px ridge #ccc;
+    padding: 20px;
+}
+
+.product-info h3 {
+    width: 100%;
+}
+
+.product-info #items {
+    width: 90%;
+    margin: 20px;
+}
+
+.product-comment {
+    width: 50%;
+    margin-left: 10%;
+}
+
+.comment-input {
+    height: 100px;
+    text-align: center;
+}
+
+.comment-input label {
+    margin: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    border-bottom: 2px solid black;
+}
+
+.comment-input input {
+    font-size: 1em;
+    outline: none;
+    padding: 5px;
+    border: none;
+
+    border-bottom: 2px solid midnightblue;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.comment-input #comment-btn {
+    color: white;
+    background-color: crimson;
+}
+
+#dummy-iframe,
+.dummy-input {
+    display: none;
+}
+
+.comment-container {
+    width: 100%;
+    padding: 0px s20px;
+}
+
+.comment-list {
+    list-style: none;
+}
+
+.comment-list .comment-item {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    text-align: center;
+}

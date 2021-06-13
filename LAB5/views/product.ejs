@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <title>Product Page</title>
+</head>
+
+<body>
+    <div id="banner">
+        <h1 id="banner-text">Welcome to INTERNET-PROGRAMMING SHOP</h1>
+    </div>
+    <div id="nav">
+        <a href="/" class="nav-item">MAIN</a>
+        <a href="/login.html" class="nav-item">LOGIN</a>
+        <a href="/signup.html" class="nav-item">REGISTER</a>
+    </div>
+    <div id="content">
+        <div id="main">
+            <div class="product-info">
+                <h3>Product No.<%=data.product_id%>
+                </h3>
+                <div id="items">
+                    <table class="item-table">
+                        <tr>
+                            <td rowspan="3" class="item-image">
+                                <img
+                                    style="background-position-y: <%=data.product_offset%>px; background-image: url('<%=data.product_image%>')" />
+                            </td>
+                            <td class="item-name">
+                                <%=data.product_title%>
+                                    <span class="item-bar"></span>
+                            </td>
+                            <td class="item-value">
+                                <%=data.product_price%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="item-unit">
+                                <%=data.product_unit%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="item-etc">
+                                <%=data.product_etc%>
+                            </td>
+                            <td class="item-category">
+                                <%=data.product_category%>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="product-comment">
+                <div class="comment-input">
+                    <form method="POST" action="/product/comment" target="dummy">
+                        <input type="text" class="dummy-input" name="prod_id" value="<%=data.product_id%>">
+                        <input type="text" class="dummy-input" id="comment-dummy" name="comment">
+                        <label for="comment-input">Enter comment:</label>
+                        <input type="text" id="comment-input" placeholder="리뷰를 남겨주세요">
+                        <input type="submit" value="add comment" id="comment-btn" />
+                    </form>
+                </div>
+                <div class="comment-container">
+                    <ul class="comment-list">
+                        <% for(let i=0; comments && i < comments.length; i++) { %>
+                            <li class="comment-item">
+                                <%=comments[i] %>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
+            </div>
+            <iframe src="" frameborder="0" id="dummy-iframe" name="dummy"></iframe>
+        </div>
+    </div>
+
+</body>
+<script>
+    const post_form = document.querySelector('form');
+    const comment_dummy = document.querySelector('#comment-dummy');
+    const comment_input = document.querySelector('#comment-input');
+
+    post_form.onsubmit = (e) => {
+        comment_dummy.value = comment_input.value;
+        comment_input.value = "";
+    }
+</script>
+
+</html>
